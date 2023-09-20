@@ -13,6 +13,7 @@ public class Usuario {
         this.nome = nome;
         this.idade = idade;
         this.endereco = endereco;
+        this.senha = senha; //adicionado
         usuarios.add(this);
     }
 

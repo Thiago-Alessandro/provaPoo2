@@ -40,25 +40,31 @@ public class Main {
     }
 
     private static void cadastrar(){
-        System.out.println("Qual tipo de usuário desejas cadastrar?\n1 - Aluno\n2 - Professor\n3 - Secretário\n0 - Voltar");
-        int opcao = sc.nextInt();
+        int opcao; //alterado
+        do { //alterado
+            System.out.println("Qual tipo de usuário desejas cadastrar?\n1 - Aluno\n2 - Professor\n3 - Secretário\n0 - Voltar");
+            opcao = sc.nextInt(); //alterado
 
-        System.out.println("Digite seu nome: ");
-        String nome = sc.next();
-        System.out.println("Digite sua senha: ");
-        String senha = sc.next();
-        System.out.println("Digite sua idade: ");
-        int idade = sc.nextInt();
-        System.out.println("Digite seu endereco: ");
-        String endereco = sc.next();
+            if(opcao != 0) { // alterado/adicionado
 
-        do {
-            switch (opcao) {
-                case 1 -> new Aluno(nome, senha, idade, endereco);
-                case 2 -> new Professor(nome, senha, idade, endereco);
-                case 3 -> new Secretario(nome, senha, idade, endereco);
-                case 0 -> {}
-                default -> System.out.println("Insira uma opção válida!");
+                System.out.println("Digite seu nome: ");
+                String nome = sc.next();
+                System.out.println("Digite sua senha: ");
+                String senha = sc.next();
+                System.out.println("Digite sua idade: ");
+                int idade = sc.nextInt();
+                System.out.println("Digite seu endereco: ");
+                String endereco = sc.next();
+
+//        do {
+                switch (opcao) {
+                    case 1 -> new Aluno(nome, senha, idade, endereco);
+                    case 2 -> new Professor(nome, senha, idade, endereco);
+                    case 3 -> new Secretario(nome, senha, idade, endereco);
+//                    case 0 -> {
+//                    }
+                    default -> System.out.println("Insira uma opção válida!");
+                }
             }
         }while(opcao != 0);
     }
